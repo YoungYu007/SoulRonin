@@ -1,0 +1,173 @@
+@mixin backgroundBlack {
+  background: {
+    color: #111;
+    image: url(//y.gtimg.cn/mediastyle/music_svip/img/dot.png?max_age=2592000&v=91538fb…);
+    repeat: repeat;
+  }
+  transition: transform .5s;
+}
+
+.layout-header {
+  width: 100%;
+  height: 56px;
+
+  .header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    width: 100%;
+
+    .header-wrap {
+      width: 1280px;
+      height: 56px;
+      line-height: 56px;
+      margin: auto;
+
+      .layout-logo {
+        width: 360px;
+        height: 100%;
+        position: absolute;
+
+        .layout-logo-title {
+          font-family: Righteous;
+          font-size: 36px;
+          color: aliceblue;
+          animation: letterspacing 1s alternate ease-in-out;
+          // animation: letterspacing 3.6s infinite alternate ease-in-out;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate3d(-50%, -50%, 0);
+          letter-spacing: 5px;
+        }
+      }
+
+      .layout-nav {
+        float: left;
+        margin-left: 360px;
+        width: 680px;
+        height: 100%;
+        .layout-nav-item {
+          float: left;
+          font-size: 18px;
+          padding: 0 15px;
+          cursor: pointer;
+          &.nav-active,
+          &:hover {
+            color: #409eff;
+          }
+        }
+      }
+
+      .layout-status {
+        float: right;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &.layout-status-login {
+          padding: 0 10px 0 36px;
+          cursor: pointer;
+          font-size: 14px;
+          .layout-status-user {
+            height: 100%;
+            .layout-status-avatar {
+              display: inline-block;
+              width: 36px;
+              height: 36px;
+              vertical-align: middle;
+            }
+
+            .layout-status-username {
+              float: right;
+              max-width: 200px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin: 0 5px;
+            }
+          }
+
+          .layout-avatar-link {
+            // 图像公共样式
+            border-radius: 50%;
+            border: 1px solid #f1f1f1;
+            position: relative;
+            background: url(../../assets/image/avatar_300.png) no-repeat center
+              center;
+            background-size: 100% 100%;
+          }
+
+          .layout-dropdown {
+            @include backgroundBlack;
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 330px;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            line-height: normal;
+            pointer-events: none;
+            visibility: hidden;
+            max-height: 0;
+            transition: max-height 1s ease-out, visibility 1ms 1s;
+            overflow: hidden;
+            height: 360px;
+          }
+
+          &:hover {
+            .layout-drop {
+              pointer-events: auto;
+              max-height: 600px;
+              visibility: visible;
+              transition: max-height 1s ease-out;
+            }
+          }
+
+          .layout-user {
+            .layout-user-info {
+              margin: 20px 30px;
+              overflow: hidden;
+              .layout-user-avatar {
+                .layout-user-avatar-link {
+                  width: 100px;
+                  height: 100px;
+                  float: left;
+                }
+              }
+
+              .layout-user-con {
+                text-align: center;
+                margin-left: 110px;
+                .layout-user-con-username {
+                  font-size: 14px;
+                  line-height: 42px;
+                }
+                .layout-user-con-icon {
+                  font-size: 0;
+                  margin-bottom: 8px;
+                  img {
+                    display: inline-block;
+                    height: 24px;
+                    margin-right: 3px;
+                  }
+                }
+                .layout-user-con-handle {
+                  .layout-user-con-handle-personal {
+                    margin-right: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

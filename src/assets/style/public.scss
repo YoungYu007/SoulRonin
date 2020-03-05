@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+a.link {
+  cursor: pointer;
+  color: #f1f1f1;
+
+  &:hover {
+    color: #28b8c5;
+  }
+}
+
+.clearfix {
+  zoom: 1;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+em {
+  font-style: normal;
+}
