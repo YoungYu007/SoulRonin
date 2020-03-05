@@ -29,23 +29,23 @@
 
         <p class="video-title clearfix">
           <span :title="video.title" class="title text-overflow">{{ video.title }}</span>
-          <span class="time text-overflow">{{ video.createTime | formatterTime }}</span>
+          <span class="time text-overflow" v-time="video.createTime"></span>
         </p>
 
         <p class="video-info clearfix">
           <span class="num watch-num">
             <img src="../../assets/image/view.png" />
-            <em>{{ video.watchNum | formatterNum }}</em>
+            <em>{{ video.watchNum | formatNum }}</em>
           </span>
 
           <span class="num like-num">
             <img src="../../assets/image/like.png" />
-            <em>{{ video.likeNum | formatterNum }}</em>
+            <em>{{ video.likeNum | formatNum }}</em>
           </span>
 
           <span class="num download-num">
             <img src="../../assets/image/download.png" />
-            <em>{{ video.downloadNum | formatterNum }}</em>
+            <em>{{ video.downloadNum | formatNum }}</em>
           </span>
         </p>
 

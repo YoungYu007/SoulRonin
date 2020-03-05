@@ -22,23 +22,23 @@
             <div class="item-desc clearfix">
               <p class="item-title clearfix">
                 <span :title="item.title" class="title text-overflow">{{ item.title }}</span>
-                <span class="time text-overflow">{{ item.createTime | formatterTime }}</span>
+                <span class="time text-overflow" v-time="item.createTime"></span>
               </p>
 
               <p class="item-num-info clearfix">
                 <span class="num watch-num">
                   <img src="../../assets/image/view_white.png" />
-                  <em>{{ item.watchNum | formatterNum }}</em>
+                  <em>{{ item.watchNum | formatNum }}</em>
                 </span>
 
                 <span class="num like-num">
                   <img src="../../assets/image/like_white.png" />
-                  <em>{{ item.likeNum | formatterNum }}</em>
+                  <em>{{ item.likeNum | formatNum }}</em>
                 </span>
 
                 <span class="num download-num">
                   <img src="../../assets/image/download_white.png" />
-                  <em>{{ item.downloadNum | formatterNum }}</em>
+                  <em>{{ item.downloadNum | formatNum }}</em>
                 </span>
               </p>
             </div>
