@@ -11,10 +11,10 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  to.meta && (typeof to.meta.title !== 'undefined' && setDocumentTitle(`${domTitle} - ${to.meta.title}`))
+  to.meta &&
+    typeof to.meta.title !== 'undefined' &&
+      setDocumentTitle(`${domTitle} - ${to.meta.title}`)
   next()
 })
-
-
 
 export default router
