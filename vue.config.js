@@ -40,7 +40,10 @@ const vueConfig = {
 
   chainWebpack: (config) => {
     config.resolve.alias
-      .set('@$', resolve('src'))
+      .set('@', resolve('src'))
+      .set('~', resolve('src/components'))
+      .set('#', resolve('/src/assets'))
+      .set('^', resolve('src/views'))
 
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
@@ -85,8 +88,9 @@ const vueConfig = {
   },
 
   devServer: {
+    open: true,
     // development server port 8000
-    port: 8000
+    port: 3000
     // If you want to turn on the proxy, please remove the mockjs /src/main.jsL11
     // proxy: {
     //   '/api': {
